@@ -1,0 +1,394 @@
+{
+  "Mapes": [
+    {
+      "Nom": "Sunset",
+      "Data de eixida": "07-09-2024",
+      "Foto": "projecte/images/suns-et-1.jpg",
+      "Descripció": "Un desastre en una instal·lació local de Kingdom amenaça amb sepultar el veïnat complet. Visita el teu camió de menjar favorit i després porta la baralla a la ciutat en este mapa tradicional de tres carrils.",
+      "Millor agent": {
+        "Agent1": {
+          "Nom": "Brimstone",
+          "Habilitats": {
+            "Habilitat1": "Stun",
+            "Habilitat2": "Fums",
+            "Habilitat3": "Rastrejador",
+            "Ultimate": "Cop Orbital",
+            "Descripció ulti": "Selecciona una part del mapa per fer que un rajos orbitals caiguen del cel provocant la mort o ferint els  enemic. Aquesta habilitat també afecta als companys."
+          },
+          "fecha de entrada al joc": "Beta de 2020",
+          "tipo": "Controlador",
+          "foto": "projecte/images/Brimstone_-_Full_body.webp",
+          "descripció": "Procedent dels Estats Units, Brimstone va començar la seua vida adulta com a bomber del BFD i després com a soldat d'un esquadró de les Forces Especials conegut com els Ragged Ravens. Va servir en totes dues professions al costat d'un amic íntim al qual coneixia des de la infància. També es va afiliar a Kingdom Corporation, arribant a convertir-se en veterà de la seua filial K/SEC"
+        },
+        "Agent2": {
+          "Nom": "Chamber",
+          "Habilitats": {
+            "Habilitat1": "Rastrejador",
+            "Habilitat2": "Arma especial",
+            "Habilitat3": "Habilitats velocidad",
+            "Ultimate": "Tour de Force",
+            "Descripció ulti": "Chamber invoca un rifle personalitzat que mata als enemics amb un disparo precis, ralentizant als afectats per la baixa."
+          },
+          "fecha de entrada al joc": "16-11-2021",
+          "tipo": "Centinela",
+          "foto": "projecte/images/Chamber.webp",
+          "descripció": "Chamber, un agent francés, combina elegancia i eficiencia en el seu rol com centinela táctico, ideal para asegurar el mapa"
+        },
+        "Agent3": {
+          "Nom": "Reyna",
+          "Habilitats": {
+            "Habilitat1": "Curació",
+            "Habilitat2": "Habilitat velocitat",
+            "Habilitat3": "Rastrejador",
+            "Ultimate": "Mode emperatriu",
+            "Descripció ulti": "El mode emperatriu fa que Reyna puga entrar al mode de velocitat sempre que mate un enemic y es cure al moment."
+          },
+          "fecha de entrada al joc": "01-06-2021",
+          "tipo": "Duelista",
+          "foto": "projecte/images/Reyna.webp",
+          "descripció": "És una agent de la Ciutat de Mèxic amb el poder d'absorbir l'energia vital de les ànimes de les persones a les quals mata. Després de veure's afectada per un succés desastrós relacionat amb màquines , Reyna sent una gran aversió per la tecnologia i la humanitat, i creu que ella i els seus companys radiants(agents) són el veritable futur de la Terra."
+        },
+        "Agent4": {
+          "Nom": "Gekko",
+          "Habilitats": {
+            "Habilitat1": "Granada cegadora",
+            "Habilitat2": "Arma especial",
+            "Habilitat3": "Ratrejador",
+            "Ultimate": "Thrash",
+            "Descripció ulti": "Thrash es una mascota de Geko que es controlada per ell durant 10 segons y en el moment que que es clique el clic esquerre este saltara cap a la direcció que s'estiga mirant fent que si cau aprop de un enemic el paralitze del i no puga menejarse practicament."
+          },
+          "fecha de entrada al joc": "07-05-2023",
+          "tipo": "Iniciador",
+          "foto": "projecte/images/Gekko_Artwork_Full.webp",
+          "descripció": "Gekko, de Los Angeles, lidera una xicoteta colla de calamitoses criatures. Els seus col·legues prenen la davantera per a dispersar als enemics, mentres que Gekko els perseguix per a després reagrupar-se i repetir el procés."
+        },
+        "Agent5": {
+          "Nom": "Clove",
+          "Habilitats": {
+            "Habilitat1": "Curació",
+            "Habilitat2": "Fums",
+            "Habilitat3": "Rastrejador",
+            "Ultimate": "Segona oportunitat",
+            "Descripció ulti": "Aquesta habilitat final torna a la vida a Clove i durant 15 segons por tornar a la vida. Si aconsegueix eliminar un enemic continuará en vida"
+          },
+          "fecha de entrada al joc": "26-03-2024",
+          "tipo": "Controlador",
+          "foto": "projecte/images/Clove_-_Full_body.webp",
+          "descripció": "Clove és un agent escocés en VALORANT l'especialitat del qual és el control del camp de batalla, fins i tot després de la seua mort, la qual cosa permet afectar els enemics després de caure. La seua habilitat principal implica llançar fragments de \"essència d'immortalitat\" que desintegren als enemics pròxims per un temps breu. A més, pot desplegar núvols que bloquegen la visió d'àrees estratègiques, usant esta capacitat abans i després de la seua caiguda en combat."
+        }
+      }
+    },
+    {
+      "Nom": "LOTUS",
+      "Data de eixida": "01-10-2023",
+      "Foto": "projecte/images/images.jpeg",
+      "Descripció": "Una misteriosa estructura els murs de la qual resguarden un conducte astral irradia poder ancestral.\n            Immenses i monolítiques portes brinden una varietat d'oportunitats de moviment i obrin el camí a tres misteriosos llocs.",
+      "Millor agent": {
+        "Agent1": {
+          "Nom": "Brimstone",
+          "Habilitats": {
+            "Habilitat1": "Stun",
+            "Habilitat2": "Fums",
+            "Habilitat3": "Rastrejador",
+            "Ultimate": "Cop Orbital",
+            "Descripció ulti": "Selecciona una part del mapa per fer que un rajos orbitals caiguen del cel provocant la mort o ferint els  enemic. Aquesta habilitat també afecta als companys."
+          },
+          "fecha de entrada al joc": "Beta de 2020",
+          "tipo": "Controlador",
+          "foto": "projecte/images/Brimstone_-_Full_body.webp",
+          "descripció": "Procedent dels Estats Units, Brimstone va començar la seua vida adulta com a bomber del BFD i després com a soldat d'un esquadró de les Forces Especials conegut com els Ragged Ravens. Va servir en totes dues professions al costat d'un amic íntim al qual coneixia des de la infància. També es va afiliar a Kingdom Corporation, arribant a convertir-se en veterà de la seua filial K/SEC"
+        },
+        "Agent2": {
+          "Nom": "Chamber",
+          "Habilitats": {
+            "Habilitat1": "Rastrejador",
+            "Habilitat2": "Arma especial",
+            "Habilitat3": "Habilitats velocidad",
+            "Ultimate": "Tour de Force",
+            "Descripció ulti": "Chamber invoca un rifle personalitzat que mata als enemics amb un disparo precis, ralentizant als afectats per la baixa."
+          },
+          "fecha de entrada al joc": "16-11-2021",
+          "tipo": "Centinela",
+          "foto": "projecte/images/Chamber.webp",
+          "descripció": "Chamber, un agent francés, combina elegancia i eficiencia en el seu rol com centinela táctico, ideal para asegurar el mapa"
+        },
+        "Agent3": {
+          "Nom": "Reyna",
+          "Habilitats": {
+            "Habilitat1": "Curació",
+            "Habilitat2": "Habilitat velocitat",
+            "Habilitat3": "Rastrejador",
+            "Ultimate": "Mode emperatriu",
+            "Descripció ulti": "El mode emperatriu fa que Reyna puga entrar al mode de velocitat sempre que mate un enemic y es cure al moment."
+          },
+          "fecha de entrada al joc": "01-06-2021",
+          "tipo": "Duelista",
+          "foto": "projecte/images/Reyna.webp",
+          "descripció": "És una agent de la Ciutat de Mèxic amb el poder d'absorbir l'energia vital de les ànimes de les persones a les quals mata. Després de veure's afectada per un succés desastrós relacionat amb màquines , Reyna sent una gran aversió per la tecnologia i la humanitat, i creu que ella i els seus companys radiants(agents) són el veritable futur de la Terra."
+        },
+        "Agent4": {
+          "Nom": "Gekko",
+          "Habilitats": {
+            "Habilitat1": "Granada cegadora",
+            "Habilitat2": "Arma especial",
+            "Habilitat3": "Ratrejador",
+            "Ultimate": "Thrash",
+            "Descripció ulti": "Thrash es una mascota de Geko que es controlada per ell durant 10 segons y en el moment que que es clique el clic esquerre este saltara cap a la direcció que s'estiga mirant fent que si cau aprop de un enemic el paralitze del i no puga menejarse practicament."
+          },
+          "fecha de entrada al joc": "07-05-2023",
+          "tipo": "Iniciador",
+          "foto": "projecte/images/Gekko_Artwork_Full.webp",
+          "descripció": "Gekko, de Los Angeles, lidera una xicoteta colla de calamitoses criatures. Els seus col·legues prenen la davantera per a dispersar als enemics, mentres que Gekko els perseguix per a després reagrupar-se i repetir el procés."
+        },
+        "Agent5": {
+          "Nom": "Clove",
+          "Habilitats": {
+            "Habilitat1": "Curació",
+            "Habilitat2": "Fums",
+            "Habilitat3": "Rastrejador",
+            "Ultimate": "Segona oportunitat",
+            "Descripció ulti": "Aquesta habilitat final torna a la vida a Clove i durant 15 segons por tornar a la vida. Si aconsegueix eliminar un enemic continuará en vida"
+          },
+          "fecha de entrada al joc": "26-03-2024",
+          "tipo": "Controlador",
+          "foto": "projecte/images/Clove_-_Full_body.webp",
+          "descripció": "Clove és un agent escocés en VALORANT l'especialitat del qual és el control del camp de batalla, fins i tot després de la seua mort, la qual cosa permet afectar els enemics després de caure. La seua habilitat principal implica llançar fragments de \"essència d'immortalitat\" que desintegren als enemics pròxims per un temps breu. A més, pot desplegar núvols que bloquegen la visió d'àrees estratègiques, usant esta capacitat abans i després de la seua caiguda en combat."
+        }
+      }
+    },
+    {
+      "Nom": "PEARL",
+      "Data de eixida": "22-07-2022",
+      "Foto": "projecte/images/pearl.jpg",
+      "Descripció": "Els atacants avancen cap als defensors en este mapa de dos llocs, ambientat en una ciutat submarina. Pearl és un mapa enfocat en l'entorn, sense mecàniques. Porta la batalla cap a un Mid compacte o a zones més esteses en el nostre primer mapa en la Terra Omega.",
+      "Millor agent": {
+        "Agent1": {
+          "Nom": "Brimstone",
+          "Habilitats": {
+            "Habilitat1": "Stun",
+            "Habilitat2": "Fums",
+            "Habilitat3": "Rastrejador",
+            "Ultimate": "Cop Orbital",
+            "Descripció ulti": "Selecciona una part del mapa per fer que un rajos orbitals caiguen del cel provocant la mort o ferint els  enemic. Aquesta habilitat també afecta als companys."
+          },
+          "fecha de entrada al joc": "Beta de 2020",
+          "tipo": "Controlador",
+          "foto": "projecte/images/Brimstone_-_Full_body.webp",
+          "descripció": "Procedent dels Estats Units, Brimstone va començar la seua vida adulta com a bomber del BFD i després com a soldat d'un esquadró de les Forces Especials conegut com els Ragged Ravens. Va servir en totes dues professions al costat d'un amic íntim al qual coneixia des de la infància. També es va afiliar a Kingdom Corporation, arribant a convertir-se en veterà de la seua filial K/SEC"
+        },
+        "Agent2": {
+          "Nom": "Chamber",
+          "Habilitats": {
+            "Habilitat1": "Rastrejador",
+            "Habilitat2": "Arma especial",
+            "Habilitat3": "Habilitats velocidad",
+            "Ultimate": "Tour de Force",
+            "Descripció ulti": "Chamber invoca un rifle personalitzat que mata als enemics amb un disparo precis, ralentizant als afectats per la baixa."
+          },
+          "fecha de entrada al joc": "16-11-2021",
+          "tipo": "Centinela",
+          "foto": "projecte/images/Chamber.webp",
+          "descripció": "Chamber, un agent francés, combina elegancia i eficiencia en el seu rol com centinela táctico, ideal para asegurar el mapa"
+        },
+        "Agent3": {
+          "Nom": "Reyna",
+          "Habilitats": {
+            "Habilitat1": "Curació",
+            "Habilitat2": "Habilitat velocitat",
+            "Habilitat3": "Rastrejador",
+            "Ultimate": "Mode emperatriu",
+            "Descripció ulti": "El mode emperatriu fa que Reyna puga entrar al mode de velocitat sempre que mate un enemic y es cure al moment."
+          },
+          "fecha de entrada al joc": "01-06-2021",
+          "tipo": "Duelista",
+          "foto": "projecte/images/Reyna.webp",
+          "descripció": "És una agent de la Ciutat de Mèxic amb el poder d'absorbir l'energia vital de les ànimes de les persones a les quals mata. Després de veure's afectada per un succés desastrós relacionat amb màquines , Reyna sent una gran aversió per la tecnologia i la humanitat, i creu que ella i els seus companys radiants(agents) són el veritable futur de la Terra."
+        },
+        "Agent4": {
+          "Nom": "Gekko",
+          "Habilitats": {
+            "Habilitat1": "Granada cegadora",
+            "Habilitat2": "Arma especial",
+            "Habilitat3": "Ratrejador",
+            "Ultimate": "Thrash",
+            "Descripció ulti": "Thrash es una mascota de Geko que es controlada per ell durant 10 segons y en el moment que que es clique el clic esquerre este saltara cap a la direcció que s'estiga mirant fent que si cau aprop de un enemic el paralitze del i no puga menejarse practicament."
+          },
+          "fecha de entrada al joc": "07-05-2023",
+          "tipo": "Iniciador",
+          "foto": "projecte/images/Gekko_Artwork_Full.webp",
+          "descripció": "Gekko, de Los Angeles, lidera una xicoteta colla de calamitoses criatures. Els seus col·legues prenen la davantera per a dispersar als enemics, mentres que Gekko els perseguix per a després reagrupar-se i repetir el procés."
+        },
+        "Agent5": {
+          "Nom": "Clove",
+          "Habilitats": {
+            "Habilitat1": "Curació",
+            "Habilitat2": "Fums",
+            "Habilitat3": "Rastrejador",
+            "Ultimate": "Segona oportunitat",
+            "Descripció ulti": "Aquesta habilitat final torna a la vida a Clove i durant 15 segons por tornar a la vida. Si aconsegueix eliminar un enemic continuará en vida"
+          },
+          "fecha de entrada al joc": "26-03-2024",
+          "tipo": "Controlador",
+          "foto": "projecte/images/Clove_-_Full_body.webp",
+          "descripció": "Clove és un agent escocés en VALORANT l'especialitat del qual és el control del camp de batalla, fins i tot després de la seua mort, la qual cosa permet afectar els enemics després de caure. La seua habilitat principal implica llançar fragments de \"essència d'immortalitat\" que desintegren als enemics pròxims per un temps breu. A més, pot desplegar núvols que bloquegen la visió d'àrees estratègiques, usant esta capacitat abans i després de la seua caiguda en combat."
+        }
+      }
+    },
+    {
+      "Nom": "FRACTURE",
+      "Data de eixida": "08-09-2021",
+      "Foto": "projecte/images/fracture_valo.jpeg",
+      "Descripció": "Un centre d'investigació ultrasecret dividit per un experiment fallit de agents. Amb opcions de defensa tan dividides com el mateix mapa,\n            l'elecció és teua: enfrontar als atacants en el seu propi territori o tancar les escotilles i resistir l'assalt.",
+      "Millor agent": {
+        "Agent1": {
+          "Nom": "Brimstone",
+          "Habilitats": {
+            "Habilitat1": "Stun",
+            "Habilitat2": "Fums",
+            "Habilitat3": "Rastrejador",
+            "Ultimate": "Cop Orbital",
+            "Descripció ulti": "Selecciona una part del mapa per fer que un rajos orbitals caiguen del cel provocant la mort o ferint els  enemic. Aquesta habilitat també afecta als companys."
+          },
+          "fecha de entrada al joc": "Beta de 2020",
+          "tipo": "Controlador",
+          "foto": "projecte/images/Brimstone_-_Full_body.webp",
+          "descripció": "Procedent dels Estats Units, Brimstone va començar la seua vida adulta com a bomber del BFD i després com a soldat d'un esquadró de les Forces Especials conegut com els Ragged Ravens. Va servir en totes dues professions al costat d'un amic íntim al qual coneixia des de la infància. També es va afiliar a Kingdom Corporation, arribant a convertir-se en veterà de la seua filial K/SEC"
+        },
+        "Agent2": {
+          "Nom": "Chamber",
+          "Habilitats": {
+            "Habilitat1": "Rastrejador",
+            "Habilitat2": "Arma especial",
+            "Habilitat3": "Habilitats velocidad",
+            "Ultimate": "Tour de Force",
+            "Descripció ulti": "Chamber invoca un rifle personalitzat que mata als enemics amb un disparo precis, ralentizant als afectats per la baixa."
+          },
+          "fecha de entrada al joc": "16-11-2021",
+          "tipo": "Centinela",
+          "foto": "projecte/images/Chamber.webp",
+          "descripció": "Chamber, un agent francés, combina elegancia i eficiencia en el seu rol com centinela táctico, ideal para asegurar el mapa"
+        },
+        "Agent3": {
+          "Nom": "Reyna",
+          "Habilitats": {
+            "Habilitat1": "Curació",
+            "Habilitat2": "Habilitat velocitat",
+            "Habilitat3": "Rastrejador",
+            "Ultimate": "Mode emperatriu",
+            "Descripció ulti": "El mode emperatriu fa que Reyna puga entrar al mode de velocitat sempre que mate un enemic y es cure al moment."
+          },
+          "fecha de entrada al joc": "01-06-2021",
+          "tipo": "Duelista",
+          "foto": "projecte/images/Reyna.webp",
+          "descripció": "És una agent de la Ciutat de Mèxic amb el poder d'absorbir l'energia vital de les ànimes de les persones a les quals mata. Després de veure's afectada per un succés desastrós relacionat amb màquines , Reyna sent una gran aversió per la tecnologia i la humanitat, i creu que ella i els seus companys radiants(agents) són el veritable futur de la Terra."
+        },
+        "Agent4": {
+          "Nom": "Gekko",
+          "Habilitats": {
+            "Habilitat1": "Granada cegadora",
+            "Habilitat2": "Arma especial",
+            "Habilitat3": "Ratrejador",
+            "Ultimate": "Thrash",
+            "Descripció ulti": "Thrash es una mascota de Geko que es controlada per ell durant 10 segons y en el moment que que es clique el clic esquerre este saltara cap a la direcció que s'estiga mirant fent que si cau aprop de un enemic el paralitze del i no puga menejarse practicament."
+          },
+          "fecha de entrada al joc": "07-05-2023",
+          "tipo": "Iniciador",
+          "foto": "projecte/images/Gekko_Artwork_Full.webp",
+          "descripció": "Gekko, de Los Angeles, lidera una xicoteta colla de calamitoses criatures. Els seus col·legues prenen la davantera per a dispersar als enemics, mentres que Gekko els perseguix per a després reagrupar-se i repetir el procés."
+        },
+        "Agent5": {
+          "Nom": "Clove",
+          "Habilitats": {
+            "Habilitat1": "Curació",
+            "Habilitat2": "Fums",
+            "Habilitat3": "Rastrejador",
+            "Ultimate": "Segona oportunitat",
+            "Descripció ulti": "Aquesta habilitat final torna a la vida a Clove i durant 15 segons por tornar a la vida. Si aconsegueix eliminar un enemic continuará en vida"
+          },
+          "fecha de entrada al joc": "26-03-2024",
+          "tipo": "Controlador",
+          "foto": "projecte/images/Clove_-_Full_body.webp",
+          "descripció": "Clove és un agent escocés en VALORANT l'especialitat del qual és el control del camp de batalla, fins i tot després de la seua mort, la qual cosa permet afectar els enemics després de caure. La seua habilitat principal implica llançar fragments de \"essència d'immortalitat\" que desintegren als enemics pròxims per un temps breu. A més, pot desplegar núvols que bloquegen la visió d'àrees estratègiques, usant esta capacitat abans i després de la seua caiguda en combat."
+        }
+      }
+    },
+    {
+      "Nom": "HAVEN",
+      "Data de eixida": "08-09-2021",
+      "Foto": "projecte/images/haven_valorant.jpeg",
+      "Descripció": "Les característiques de Haven inclouen un tercer lloc de pues addicional. Això no afecta la quantitat d'orbes definitius en el mapa;\n            els dos orbes definitius de Haven són presents en A \"Long\" i C \"Long\" (Drac). Les portes de \"Mid\" també tenen panells destructibles que les cobrixen. Mentres estiguen intactes, absorbixen el mal i no poden ser penetrades per trets. No obstant això, els panells tenen 400 HP cadascun i poden danyar-se, amb indicadors de colors que indiquen quanta salut els queda (comença en blava, després es torna groc i després roig a mesura que reben més mal). Eventualment poden destruir-se per a permetre que els jugadors travessen estes portes per la resta de la ronda.",
+      "Millor agent": {
+        "Agent1": {
+          "Nom": "Brimstone",
+          "Habilitats": {
+            "Habilitat1": "Stun",
+            "Habilitat2": "Fums",
+            "Habilitat3": "Rastrejador",
+            "Ultimate": "Cop Orbital",
+            "Descripció ulti": "Selecciona una part del mapa per fer que un rajos orbitals caiguen del cel provocant la mort o ferint els  enemic. Aquesta habilitat també afecta als companys."
+          },
+          "fecha de entrada al joc": "Beta de 2020",
+          "tipo": "Controlador",
+          "foto": "projecte/images/Brimstone_-_Full_body.webp",
+          "descripció": "Procedent dels Estats Units, Brimstone va començar la seua vida adulta com a bomber del BFD i després com a soldat d'un esquadró de les Forces Especials conegut com els Ragged Ravens. Va servir en totes dues professions al costat d'un amic íntim al qual coneixia des de la infància. També es va afiliar a Kingdom Corporation, arribant a convertir-se en veterà de la seua filial K/SEC"
+        },
+        "Agent2": {
+          "Nom": "Chamber",
+          "Habilitats": {
+            "Habilitat1": "Rastrejador",
+            "Habilitat2": "Arma especial",
+            "Habilitat3": "Habilitats velocidad",
+            "Ultimate": "Tour de Force",
+            "Descripció ulti": "Chamber invoca un rifle personalitzat que mata als enemics amb un disparo precis, ralentizant als afectats per la baixa."
+          },
+          "fecha de entrada al joc": "16-11-2021",
+          "tipo": "Centinela",
+          "foto": "projecte/images/Chamber.webp",
+          "descripció": "Chamber, un agent francés, combina elegancia i eficiencia en el seu rol com centinela táctico, ideal para asegurar el mapa"
+        },
+        "Agent3": {
+          "Nom": "Reyna",
+          "Habilitats": {
+            "Habilitat1": "Curació",
+            "Habilitat2": "Habilitat velocitat",
+            "Habilitat3": "Rastrejador",
+            "Ultimate": "Mode emperatriu",
+            "Descripció ulti": "El mode emperatriu fa que Reyna puga entrar al mode de velocitat sempre que mate un enemic y es cure al moment."
+          },
+          "fecha de entrada al joc": "01-06-2021",
+          "tipo": "Duelista",
+          "foto": "projecte/images/Reyna.webp",
+          "descripció": "És una agent de la Ciutat de Mèxic amb el poder d'absorbir l'energia vital de les ànimes de les persones a les quals mata. Després de veure's afectada per un succés desastrós relacionat amb màquines , Reyna sent una gran aversió per la tecnologia i la humanitat, i creu que ella i els seus companys radiants(agents) són el veritable futur de la Terra."
+        },
+        "Agent4": {
+          "Nom": "Gekko",
+          "Habilitats": {
+            "Habilitat1": "Granada cegadora",
+            "Habilitat2": "Arma especial",
+            "Habilitat3": "Ratrejador",
+            "Ultimate": "Thrash",
+            "Descripció ulti": "Thrash es una mascota de Geko que es controlada per ell durant 10 segons y en el moment que que es clique el clic esquerre este saltara cap a la direcció que s'estiga mirant fent que si cau aprop de un enemic el paralitze del i no puga menejarse practicament."
+          },
+          "fecha de entrada al joc": "07-05-2023",
+          "tipo": "Iniciador",
+          "foto": "projecte/images/Gekko_Artwork_Full.webp",
+          "descripció": "Gekko, de Los Angeles, lidera una xicoteta colla de calamitoses criatures. Els seus col·legues prenen la davantera per a dispersar als enemics, mentres que Gekko els perseguix per a després reagrupar-se i repetir el procés."
+        },
+        "Agent5": {
+          "Nom": "Clove",
+          "Habilitats": {
+            "Habilitat1": "Curació",
+            "Habilitat2": "Fums",
+            "Habilitat3": "Rastrejador",
+            "Ultimate": "Segona oportunitat",
+            "Descripció ulti": "Aquesta habilitat final torna a la vida a Clove i durant 15 segons por tornar a la vida. Si aconsegueix eliminar un enemic continuará en vida"
+          },
+          "fecha de entrada al joc": "26-03-2024",
+          "tipo": "Controlador",
+          "foto": "projecte/images/Clove_-_Full_body.webp",
+          "descripció": "Clove és un agent escocés en VALORANT l'especialitat del qual és el control del camp de batalla, fins i tot després de la seua mort, la qual cosa permet afectar els enemics després de caure. La seua habilitat principal implica llançar fragments de \"essència d'immortalitat\" que desintegren als enemics pròxims per un temps breu. A més, pot desplegar núvols que bloquegen la visió d'àrees estratègiques, usant esta capacitat abans i després de la seua caiguda en combat."
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>habilitats</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/picnic">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jsrender/1.0.13/jsrender.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jsviews/1.0.15/jsviews.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/navigo/8.11.1/navigo.min.js"></script>
+</head>
+<body>
+
+<a href="index.html" class="button">Torna a l'inici</a>
+<h1>Llista d'habilitats</h1>
+<div id="llista-habilitats"></div>
+
+<script id="plantillaAfegirhabilitats" type="text/x-jsrender">
+    <h2>Afegir una nova habilitat</h2>
+    <form id="add_habilitats_form">
+      <label for="Nom">Nom</label>
+      <input type="text" id="Nom" name="Nom" required><br>
+
+      <label for="ID_personajes">ID de l'Agent</label>
+      <input type="number" id="ID_personajes" name="ID_personajes" required><br>
+
+      <label for="Habilitat1">Habilitat 1</label>
+      <input type="text" id="Habilitat1" name="Habilitat1"><br>
+
+      <label for="Habilitat2">Habilitat 2</label>
+      <input type="text" id="Habilitat2" name="Habilitat2"><br>
+
+      <label for="Habilitat3">Habilitat 3</label>
+      <input type="text" id="Habilitat3" name="Habilitat3"><br>
+
+      <label for="Ultimate">Ultimate</label>
+      <input type="text" id="Ultimate" name="Ultimate"><br>
+
+      <label for="Descripcio_ultimate">Descripció Ultimate</label>
+      <input type="text" id="Descripcio_ultimate" name="Descripcio_ultimate"><br>
+
+      <input type="submit" value="Afegir habilitat">
+    </form>
+</script>
+
+<script id="plantillahabilitats" type="text/x-jsrender">
+    <a href="#" class="add button warning">Afegir</a>
+    <table class="primary">
+      <thead>
+        <tr>
+          <th>Agent ID</th>
+          <th>Habilitat 1</th>
+          <th>Habilitat 2</th>
+          <th>Habilitat 3</th>
+          <th>Ultimate</th>
+          <th>Descripció Ultimate</th>
+          <th>Accions</th>
+        </tr>
+      </thead>
+      <tbody>
+        {{for habilitats}}
+          <tr>
+            <td>{{:ID_personajes}}</td>
+            <td>{{:Habilitat1}}</td>
+            <td>{{:Habilitat2}}</td>
+            <td>{{:Habilitat3}}</td>
+            <td>{{:Ultimate}}</td>
+            <td>{{:Descripcio_ultimate}}</td>
+            <td>
+              <a href="#" data-id="{{:ID}}" class="borrar button warning">Delete</a>
+              <a href="#" data-id="{{:ID}}" class="modificar button success">Modify</a>
+            </td>
+          </tr>
+        {{/for}}
+      </tbody>
+    </table>
+</script>
+
+<script id="plantillaModificarhabilitats" type="text/x-jsrender">
+    <h2>Modificar habilitat</h2>
+    <form id="modify_habilitats_form">
+      <input type="hidden" name="ID" value="{{:ID}}">
+
+      <label>Agent ID</label>
+      <input type="number" name="ID_personajes" value="{{:ID_personajes}}" required><br>
+
+      <label>Habilitat 1</label>
+      <input type="text" name="Habilitat1" value="{{:Habilitat1}}" required><br>
+
+      <label>Habilitat 2</label>
+      <input type="text" name="Habilitat2" value="{{:Habilitat2}}" required><br>
+
+      <label>Habilitat 3</label>
+      <input type="text" name="Habilitat3" value="{{:Habilitat3}}" required><br>
+
+      <label>Ultimate</label>
+      <input type="text" name="Ultimate" value="{{:Ultimate}}" required><br>
+
+      <label>Descripció Ultimate</label>
+      <input type="text" name="Descripcio_ultimate" value="{{:Descripcio_ultimate}}" required><br>
+
+      <input type="submit" value="Guardar canvis">
+    </form>
+</script>
+
+<script>
+    $.fn.serializeObject = function() {
+        var result = {};
+        var extend = function(i, element) {
+            var node = result[element.name];
+            if (node !== undefined && node !== null) {
+                if ($.isArray(node)) {
+                    node.push(element.value);
+                } else {
+                    result[element.name] = [node, element.value];
+                }
+            } else {
+                result[element.name] = element.value;
+            }
+        };
+        $.each(this.serializeArray(), extend);
+        return result;
+    };
+
+    function mostrahabilitats() {
+        $.getJSON("/api/habilitats", function(data) {
+            // Aquí el cambio clave: envías { habilitats: data }
+            let html = $("#plantillahabilitats").render({ habilitats: data });
+            $("#llista-habilitats").html(html);
+
+            $(".borrar").on("click", deletehabilitat);
+            $(".add").on("click", afegirhabilitat);
+            $(".modificar").on("click", modificarhabilitat);
+        });
+    }
+
+    function deletehabilitat(event) {
+        event.preventDefault();
+        let id = $(this).data("id");
+
+        $.ajax({
+            url: "/api/habilitats/" + id,
+            type: "DELETE"
+        }).then(mostrahabilitats);
+    }
+
+    function afegirhabilitat(event) {
+        event.preventDefault();
+        let html = $("#plantillaAfegirhabilitats").render();
+        $("#llista-habilitats").html(html);
+
+        $("#add_habilitats_form").on("submit", function(e) {
+            e.preventDefault();
+            let formData = $(this).serializeObject();
+
+            formData.ID_personajes = parseInt(formData.ID_personajes);
+
+            $.post("/api/habilitats", formData)
+                .done(mostrahabilitats)
+                .fail(err => {
+                    console.error("Error al afegir habilitat:", err.responseText);
+                    alert("Error al afegir habilitat.");
+                });
+        });
+    }
+
+
+    function modificarhabilitat(event) {
+        event.preventDefault();
+        const id = $(this).data("id");
+
+        $.getJSON("/api/habilitats/" + id, function(data) {
+            let html = $("#plantillaModificarhabilitats").render(data.habilitat);
+            $("#llista-habilitats").html(html);
+
+            $("#modify_habilitats_form").on("submit", function(e) {
+                e.preventDefault();
+                const formData = $(this).serializeObject();
+
+                formData.ID_personajes = parseInt(formData.ID_personajes);
+
+                $.ajax({
+                    url: "/api/habilitats/" + formData.ID,
+                    type: "PUT",
+                    data: formData
+                })
+                    .done(mostrahabilitats)
+                    .fail(err => {
+                        console.error("Error al modificar habilitat:", err.responseText);
+                        alert("Error al modificar habilitat.");
+                    });
+            });
+        });
+    }
+
+
+    $(document).ready(function() {
+        const router = new Navigo("/", { hash: true });
+
+        router.on({
+            "/mapes": () => {
+                window.location.href = "mapes.html";
+            },
+            "/Agents": () => {
+                window.location.href = "Agents.html";
+            },
+            "/Habilitats": () => {
+                $("#llista-habilitats").html("");
+                mostrahabilitats();
+            }
+        });
+
+        router.resolve();
+        router.updatePageLinks();
+
+        // Mostramos la lista nada más cargar la página
+        mostrahabilitats();
+    });
+</script>
+
+</body>
+</html>

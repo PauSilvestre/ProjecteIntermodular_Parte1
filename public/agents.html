@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <title>agents</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/picnic">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jsrender/1.0.13/jsrender.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jsviews/1.0.15/jsviews.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/navigo/8.11.1/navigo.min.js"></script>
+</head>
+<body>
+
+<a href="index.html" class="button">Torna a l'inici</a>
+<h1>Llista d'agents</h1>
+<div id="llista-agents"></div>
+
+<script id="plantillaAfegiragents" type="text/x-jsrender">
+    <h2>Afegir un nou agent</h2>
+    <form id="add_agents_form">
+      <label>Nom</label>
+      <input type="text" name="title" required><br>
+
+      <label>Habilitats</label>
+      <input type="text" name="Habilitats"><br>
+
+      <label>Data d'eixida</label>
+      <input type="date" name="Fecha_eixida_al_joc"><br>
+
+      <label>Tipus</label>
+      <input type="text" name="Tipo"><br>
+
+      <label>URL de la Foto</label>
+      <input type="text" name="image"><br>
+
+      <label>Descripció</label>
+      <input type="text" name="Descripció"><br>
+
+      <input type="submit" value="Afegir agent">
+    </form>
+</script>
+
+<script id="plantillaagents" type="text/x-jsrender">
+    <a href="#" class="add button warning">Afegir</a>
+    <table class="primary">
+        <thead>
+            <tr>
+                <th>Nom</th>
+                <th>Habilitats</th>
+                <th>Data d'eixida</th>
+                <th>Tipus</th>
+                <th>Foto</th>
+                <th>Descripció</th>
+                <th>Accions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {{for agents}}
+                <tr>
+                    <td>{{:Nom}}</td>
+                    <td>{{:Habilitats}}</td>
+                    <td>{{:Fecha_eixida_al_joc}}</td>
+                    <td>{{:Tipo}}</td>
+                    <td>
+                        {{if Foto}}
+                            <img src="{{:Foto}}" alt="{{:Nom}}" style="max-height: 80px;">
+                        {{else}}(Sense Foto){{/if}}
+                    </td>
+                    <td>{{:Descripció}}</td>
+                    <td>
+                        <a href="#" data-id="{{:ID}}" class="borrar button warning">Delete</a>
+                        <a href="#" data-id="{{:ID}}" class="modificar button success">Modify</a>
+                    </td>
+                </tr>
+            {{/for}}
+        </tbody>
+    </table>
+</script>
+
+<script id="plantillaModificaragents" type="text/x-jsrender">
+    <h2>Modificar agent</h2>
+    <form id="modify_agents_form">
+      <input type="hidden" name="id" value="{{:ID}}">
+
+      <label>Nom</label>
+      <input type="text" name="title" value="{{:Nom}}" required><br>
+
+      <label>Habilitats</label>
+      <input type="text" name="Habilitats" value="{{:Habilitats}}"><br>
+
+      <label>Data d'eixida</label>
+      <input type="date" name="Fecha_eixida_al_joc" value="{{:Fecha_eixida_al_joc}}"><br>
+
+      <label>Tipus</label>
+      <input type="text" name="Tipo" value="{{:Tipo}}"><br>
+
+      <label>Foto</label>
+      <input type="text" name="image" value="{{:Foto}}"><br>
+
+      <label>Descripció</label>
+      <input type="text" name="Descripció" value="{{:Descripció}}"><br>
+
+      <input type="submit" value="Guardar canvis">
+    </form>
+</script>
+
+<script>
+    $.fn.serializeObject = function() {
+        var result = {};
+        $.each(this.serializeArray(), function(_, element) {
+            if (result[element.name]) {
+                if (!Array.isArray(result[element.name])) {
+                    result[element.name] = [result[element.name]];
+                }
+                result[element.name].push(element.value);
+            } else {
+                result[element.name] = element.value;
+            }
+        });
+        return result;
+    };
+
+    function mostraagents() {
+        $.getJSON("/api/agents", function(data) {
+            let html = $("#plantillaagents").render({ agents: data });
+            $("#llista-agents").html(html);
+
+            $(".borrar").on("click", deleteagents);
+            $(".add").on("click", addagents);
+            $(".modificar").on("click", modificaragents);
+        });
+    }
+
+    function deleteagents(e) {
+        e.preventDefault();
+        let id = $(this).data("id");
+        $.ajax({
+            url: "/api/agents/" + id,
+            type: "DELETE"
+        }).then(mostraagents);
+    }
+
+    function addagents(e) {
+        e.preventDefault();
+        let html = $("#plantillaAfegiragents").render();
+        $("#llista-agents").html(html);
+
+        $("#add_agents_form").on("submit", function(e) {
+            e.preventDefault();
+            let data = $(this).serializeObject();
+            $.post("/api/agents", data, mostraagents);
+        });
+    }
+
+    function modificaragents(e) {
+        e.preventDefault();
+        let id = $(this).data("id");
+
+        $.getJSON("/api/agents/" + id, function(data) {
+            let html = $("#plantillaModificaragents").render(data[0]);
+            $("#llista-agents").html(html);
+
+            $("#modify_agents_form").on("submit", function(e) {
+                e.preventDefault();
+                let formData = $(this).serializeObject();
+
+                $.ajax({
+                    url: "/api/agents/" + formData.id,
+                    type: "PUT",
+                    data: formData
+                }).then(mostraagents);
+            });
+        });
+    }
+
+    $(document).ready(function() {
+        const router = new Navigo("/", { hash: true });
+
+        router.on({
+            "/Mapes": () => window.location.href = "Mapes.html",
+            "/agents": () => {
+                $("#llista-agents").html("");
+                mostraagents();
+            },
+            "/Habilitats": () => window.location.href = "Habilitats.html"
+        });
+
+        router.notFound(() => router.navigate("/agents"));
+
+        router.resolve();
+        router.updatePageLinks();
+        mostraagents();
+    });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <title>mapes</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/picnic">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jsrender/1.0.13/jsrender.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jsviews/1.0.15/jsviews.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/navigo/8.11.1/navigo.min.js"></script>
+</head>
+<body>
+
+<a href="index.html" class="button">Torna a l'inici</a>
+<h1>Llista de mapes</h1>
+<div id="llista-mapes"></div>
+
+<script id="plantillaAfegirmapes" type="text/x-jsrender">
+    <h2>Afegir un nou mapa</h2>
+    <form id="add_mapes_form">
+      <label for="title">Títol</label>
+      <input type="text" id="title" name="title" required><br>
+
+      <label for="Data_eixida">Data de l'eixida</label>
+      <input type="date" id="Data_eixida" name="Data_eixida"><br>
+
+      <label for="agents">Millors agents</label>
+      <input type="text" id="agents" name="Millors_agents" required><br>
+
+      <label for="image">URL de la Foto</label>
+      <input type="text" id="image" name="image"><br>
+
+      <label for="Descripcio">Descripció</label>
+      <input type="text" id="Descripcio" name="Descripcio"><br>
+
+      <input type="submit" value="Afegir mapa">
+    </form>
+</script>
+
+<script id="plantillamapes" type="text/x-jsrender">
+    <a href="#" class="add button warning">Afegir</a>
+    <table class="primary">
+      <thead>
+        <tr>
+          <th>Nom</th>
+          <th>Data eixida</th>
+          <th>Millors agents</th>
+          <th>Foto</th>
+          <th>Descripció</th>
+          <th>Accions</th>
+        </tr>
+      </thead>
+      <tbody>
+        {{for mapes}}
+          <tr>
+            <td>{{:Nom}}</td>
+            <td>{{:Data_eixida}}</td>
+            <td>{{:Millors_agents}}</td>
+            <td>
+              {{if Foto}}
+                <img src="{{:Foto}}" alt="{{:Nom}}" style="max-height: 80px;">
+              {{else}}
+                (Sense Foto)
+              {{/if}}
+            </td>
+            <td>{{:Descripcio}}</td>
+            <td>
+              <a href="#" data-id="{{:ID}}" class="borrar button warning">Delete</a>
+              <a href="#" data-id="{{:ID}}" class="modificar button success">Modify</a>
+            </td>
+          </tr>
+        {{/for}}
+      </tbody>
+    </table>
+</script>
+
+<script id="plantillaModificarmapes" type="text/x-jsrender">
+    <h2>Modificar mapa</h2>
+    <form id="modify_mapes_form">
+      <input type="hidden" name="id" value="{{:ID}}">
+
+      <label for="title">Títol</label>
+      <input type="text" id="title" name="title" value="{{:Nom}}" required><br>
+
+      <label for="Data_eixida">Data de l'eixida</label>
+      <input type="date" id="Data_eixida" name="Data_eixida" value="{{:Data_eixida}}"><br>
+
+      <label for="Millors_agents">Millors agents</label>
+      <input type="text" id="Millors_agents" name="Millors_agents" value="{{:Millors_agents}}" required><br>
+
+      <label for="image">Foto</label>
+      <input type="text" id="image" name="image" value="{{:Foto}}"><br>
+
+      <label for="Descripcio">Descripció</label>
+      <input type="text" id="Descripcio" name="Descripcio" value="{{:Descripcio}}"><br>
+
+      <input type="submit" value="Guardar canvis">
+    </form>
+</script>
+
+<script>
+    $.fn.serializeObject = function() {
+        var result = {};
+        var extend = function(i, element) {
+            var node = result[element.name];
+            if (node !== undefined && node !== null) {
+                if ($.isArray(node)) {
+                    node.push(element.value);
+                } else {
+                    result[element.name] = [node, element.value];
+                }
+            } else {
+                result[element.name] = element.value;
+            }
+        };
+        $.each(this.serializeArray(), extend);
+        return result;
+    };
+
+    function mostramapes() {
+        $.getJSON("/api/mapes", function(data) {
+            let html = $("#plantillamapes").render({ mapes: data });
+            $("#llista-mapes").html(html);
+
+            $(".borrar").on("click", deletemapes);
+            $(".add").on("click", addmapes);
+            $(".modificar").on("click", modificarmapes);
+        });
+    }
+
+    function deletemapes(event) {
+        event.preventDefault();
+        let id = $(this).data("id");
+
+        $.ajax({
+            url: "/api/mapes/" + id,
+            type: "DELETE"
+        }).then(mostramapes);
+    }
+
+    function addmapes(event) {
+        event.preventDefault();
+        let html = $("#plantillaAfegirmapes").render();
+        $("#llista-mapes").html(html);
+
+        $("#add_mapes_form").on("submit", function(e) {
+            e.preventDefault();
+            let formData = $(this).serializeObject();
+
+            $.post("/api/mapes", formData, mostramapes);
+        });
+    }
+
+    function modificarmapes(event) {
+        event.preventDefault();
+        const id = $(this).data("id");
+
+        $.getJSON("/api/mapes/" + id, function(data) {
+            let html = $("#plantillaModificarmapes").render(data.mapes);
+            $("#llista-mapes").html(html);
+
+            $("#modify_mapes_form").on("submit", function(e) {
+                e.preventDefault();
+                const formData = $(this).serializeObject();
+
+                $.ajax({
+                    url: "/api/mapes/" + formData.id,
+                    type: "PUT",
+                    data: formData
+                }).then(mostramapes);
+            });
+        });
+    }
+
+    $(document).ready(function() {
+        const router = new Navigo("/", { hash: true });
+
+        router.on({
+            "/mapes": () => {
+                $("#llista-mapes").html("");
+                mostramapes();
+            },
+            "/Agents": () => {
+                window.location.href = "Agents.html";
+            },
+            "/Habilitats": () => {
+                window.location.href = "Habilitats.html";
+            }
+        });
+
+        router.resolve();
+        router.updatePageLinks();
+        mostramapes();
+    });
+</script>
+
+</body>
+</html>
